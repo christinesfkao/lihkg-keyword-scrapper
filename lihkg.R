@@ -15,7 +15,8 @@ lihkg$scrape(threadids)
 print(head(lihkg$bag))
 
 print("Exporting scrapped contents...")
-rio::export(lihkg$bag, keyword + "_contents.xlsx")
+output <- paste(keyword, "contents.xlsx", sep = "")
+rio::export(lihkg$bag, output)
 
 lihkg$finalize()
 print("End of program at" , date())
